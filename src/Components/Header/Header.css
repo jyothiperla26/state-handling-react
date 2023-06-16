@@ -1,0 +1,17 @@
+.addButton{
+    background-color: aqua;
+    color:white;
+    height:35px;
+    width:100px;
+    border-radius: 5px;
+    border-width: 0px;
+    font-weight:bold;
+    margin:20px;
+}
+.span{
+    font-weight: bold;
+    font-family:"Roboto";
+    font-size:20px;
+    text-align: left;
+    margin-right:40px;
+}

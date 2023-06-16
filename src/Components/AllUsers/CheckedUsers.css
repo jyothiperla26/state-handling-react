@@ -1,4 +1,4 @@
-.user-container{
+.checked-users-container{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -6,9 +6,8 @@
     border: 1px solid darkgray;
     margin-bottom:10px;
     padding:10px;
-    border-radius: 5px;
     border-left:5px solid aqua;
 }
-.margin-right{
+.checked-margin-right{
     margin-right: 10px;
 }

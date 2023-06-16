@@ -1,6 +1,8 @@
+import CheckedUsers from './CheckedUsers';
 import UserHeader from './UserHeader';
 import './Users.css';
 import UsersList from './UsersList';
+import React, { useState } from "react";
 
 const usersData=[
       {
@@ -8,59 +10,106 @@ const usersData=[
         name: "Anjali",
         role: "Developer",
         email: "anjali@everest.engineering",
+        isChecked:false
       },
       {
         id:2,
-        name: "Anjali",
-        role: "Developer",
-        email: "anjali@everest.engineering",
+        name: "Ankush",
+        role: "Designer",
+        email: "ankush@everest.engineering",
+        isChecked:false
       },
       {
         id:3,
-        name: "Anjali",
-        role: "Developer",
-        email: "anjali@everest.engineering",
+        name: "Pragya",
+        role: "Designer",
+        email: "pragya@everest.engineering",
+        isChecked:false
       },
       {
         id:4,
-        name: "Anjali",
-        role: "Developer",
-        email: "anjali@everest.engineering",
+        name: "Mukesh",
+        role: "Team lead",
+        email: "mukesh@everest.engineering",
+        isChecked:false
       },
       {
         id:5,
-        name: "Anjali",
+        name: "Harika",
         role: "Developer",
-        email: "anjali@everest.engineering",
+        email: "harika@everest.engineering",
+        isChecked:false
       },
       {
         id:6,
-        name: "Anjali",
+        name: "Syamala",
         role: "Developer",
-        email: "anjali@everest.engineering",
+        email: "syamala@everest.engineering",
+        isChecked:false
+      },
+      {
+        id:7,
+        name: "Vijay",
+        role: "Developer",
+        email: "vijay@everest.engineering",
+        isChecked:false
+      },
+      {
+        id:8,
+        name: "Sowmya",
+        role: "Developer",
+        email: "sowmya@everest.engineering",
+        isChecked:false
       }
+
 ]
 
 function Users() {
   let selectedUsersData=null;
-
+  const [checkedData, setCheckedData] = useState([]);
+  const [display, setDisplay] = useState(true);
+  
   const selectedUser = (id) => {
-    selectedUsersData = usersData.filter((user) => user.id === id);
+     usersData.map((user) => {
+        if(user.id===id){
+          return user.isChecked=true;
+        }
+     });
   };
-  console.log(selectedUser);
+  
+  const setSelectedData=()=>{
+    selectedUsersData = usersData.filter((user) => user.isChecked === true);
+    setCheckedData(selectedUsersData);
+    setDisplay(false);
+  }
+
   return (
-    <>
-       <UserHeader/>
-       {usersData.map((user) => (
+    <div className="usersList">
+       {display?<UserHeader/>:""}
+        {display?usersData.map((user) => (
         <UsersList
+          className={display}
+          name={user.name}
+          role={user.role}
+          email={user.email}
+          isChecked={user.isChecked}
+          key={user.id}
+          selectUser={()=>{selectedUser(user.id)}}
+        />
+      )):""}
+      {display?<div className="buttons-align">
+        <button className="cancel-button">Cancel</button>
+        <button className="add-users-button" onClick={setSelectedData}>Add Users</button>
+      </div>:""}
+      {checkedData.map((user) => (
+        <CheckedUsers
           name={user.name}
           role={user.role}
           email={user.email}
           key={user.id}
-          selectUser={() => selectedUser(user.id)}
         />
       ))}
-    </>
+    </div>
   );
 }
 

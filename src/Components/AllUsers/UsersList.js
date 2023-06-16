@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+
 import './UsersList.css';
 
-function UsersList({name,role,email,key,selectUser}) {
-  const id={key};
+function UsersList({name,role,email,isChecked,key,selectUser}) {
+  
   return (
     <div className="user-container">
         <div className="margin-right"><h4>{name}</h4></div>

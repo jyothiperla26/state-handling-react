@@ -1,0 +1,23 @@
+.buttons-align{
+    text-align: end;
+}
+.add-users-button{
+    margin-right:10px;
+    background-color: black;
+    color:white;
+    height:35px;
+    width:80px;
+}
+.cancel-button{
+    margin-right:10px;
+    height:35px;
+    width:80px;
+}
+.usersList{
+    padding:20px;
+    border: 2px solid darkgray;
+    border-radius: 5px;
+}
+.display-none{
+    display: none;
+}

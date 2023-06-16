@@ -4,7 +4,7 @@ function Header({buttonClick}) {
   return (
     <div>
       <span className="span">Users</span>
-      <button className="addButton" onClick={buttonClick}>Add</button>
+      <button className="add-button" onClick={buttonClick}>Add</button>
     </div>
   );
 }

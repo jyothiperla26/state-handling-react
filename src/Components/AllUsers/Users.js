@@ -99,7 +99,7 @@ function Users() {
       )):""}
       {display?<div className="buttons-align">
         <button className="cancel-button">Cancel</button>
-        <button className="add-users-button" onClick={setSelectedData}>Add Users</button>
+        <button className="add-user-button" onClick={setSelectedData}>Add Users</button>
       </div>:""}
       {checkedData.map((user) => (
         <CheckedUsers

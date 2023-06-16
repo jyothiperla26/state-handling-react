@@ -1,3 +1,5 @@
+# Add User Application
+
 # Description
 * This project is a `Add User Application`, we can add multiple users in our application by selecting them through check box.
 * This project has a component folder inside the src folder, it has all the required files to execute. It has AllUsers folder, and Header folder.

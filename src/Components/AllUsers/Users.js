@@ -72,6 +72,9 @@ function Users() {
   const selectedUser = (id) => {
      usersData.map((user) => {
         if(user.id===id){
+          if(user.isChecked){
+            return user.isChecked=false;
+          }
           return user.isChecked=true;
         }
      });

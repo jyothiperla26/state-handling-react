@@ -7,21 +7,21 @@ pipeline {
   stages {
     stage('install dependencies'){
       steps{
-        node{
+        node(any){
           sh 'npm install'
         }
       }
     }
     stage('Build') {
       steps {
-        node{
+        node(any){
           sh 'npm start'
         }
       }
     }
     stage('Test') {
       steps {
-        node{
+        node(any){
           sh 'npm test'
         }
       }

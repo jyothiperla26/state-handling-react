@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('install dependencies'){
       steps{
-        node{
+        node(any){
           git 'https://github.com/jyothiperla26/state-handling-react.git'
           sh 'npm install'
         }
@@ -15,7 +15,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        node{
+        node(any){
           git 'https://github.com/jyothiperla26/state-handling-react.git'
           sh 'npm start'
         }

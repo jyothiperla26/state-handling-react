@@ -1,5 +1,9 @@
 pipeline {
-  agent { docker { image 'node:20.9.0-alpine3.18' } }
+  agent any
+
+  tools {
+    nodejs 'v20.9.0'
+  }
   stages {
     stage('install dependencies'){
       steps{

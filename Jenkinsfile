@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   tools {
-    node 'v20.9.0'
+    nodejs 'node'
   }
   stages {
     stage('install dependencies'){

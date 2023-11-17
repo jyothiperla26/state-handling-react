@@ -1,23 +1,29 @@
 pipeline {
   agent any
 
-  tools {
-    node 'v20.9.0'
-  }
+//   tools {
+//     node 'v20.9.0'
+//   }
   stages {
     stage('install dependencies'){
       steps{
+        node{
           sh 'npm install'
+        }
       }
     }
     stage('Build') {
       steps {
-        sh 'npm start'
+        node{
+          sh 'npm start'
+        }
       }
     }
     stage('Test') {
       steps {
-        sh 'npm test'
+        node{
+          sh 'npm test'
+        }
       }
     }
   }

@@ -7,17 +7,17 @@ pipeline {
         }
     }
     stages {
-        stage('Build') { 
+        stage('Install dependencies') { 
             steps {
                 sh 'npm install' 
             }
         }
-        stage('Build') {
+        stage('Build the App') {
             steps {
                 sh 'npm start'
             }
         }
-        stage('Test') {
+        stage('Test the unit') {
             steps {
               sh 'npm test'
             }

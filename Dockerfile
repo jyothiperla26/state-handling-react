@@ -2,13 +2,13 @@
 FROM node:alpine AS development
 
 # Declaring env
-ENV NODE_ENV development
+# ENV NODE_ENV development
 
 # Setting up the work directory
-WORKDIR /index.js
+WORKDIR /src
 
 # Installing dependencies
-COPY ./package*.json /react-app
+COPY ./package*.json /package.json
 
 RUN npm install
 
